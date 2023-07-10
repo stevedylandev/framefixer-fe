@@ -91,6 +91,7 @@ const image =
 {SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} partytown={true} />}
 
 {SITE.splitbeeAnalytics?.enabled && <SplitbeeAnalytics {...SITE.splitbeeAnalytics} />}
+<script defer src="/_vercel/insights/script.js"></script>
 
 <link rel="shortcut icon" href={getAsset('/favicon.ico')} />
 <link rel="icon" type="image/png" href={getAsset('/favicon.png')} />

@@ -45,6 +45,7 @@
     "node": ">=16.12.0"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.1",
     "lottie-web": "^5.12.2"
   }
 }
