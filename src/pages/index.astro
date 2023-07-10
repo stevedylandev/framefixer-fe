@@ -1,345 +1,121 @@
 ---
-import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
+import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import { headerData } from '~/data';
+import { getPermalink } from '~/utils/permalinks';
 
 const meta = {
-  title: SITE.title,
-  description: SITE.description,
-  dontUseTitleTemplate: true,
+  title: "FrameFixer",
 };
 ---
 
 <Layout {meta}>
-  <!-- Hero Widget ******************* -->
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      position="left"
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
+    callToAction={{ text: 'Stay Informed', href: getPermalink('/#mc_embed_shell'), icon: 'tabler:mail' }}
+    callToAction2={{ text: 'Learn more', href: '#info' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS    </Fragment>
+      Never worry about syncing your cameras again
+    </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0 +
-        Tailwind CSS.</span
+        <span class="font-semibold">FrameFixer</span> takes photos of the same event from multiple cameras and effortlessly corrects the timestamp info to make your workflow smoother</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-      Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+    </Fragment>
+
+    <Fragment slot="image">
+      <div class="w-full flex justify-center">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player class="h-96 w-96" src="https://assets1.lottiefiles.com/packages/lf20_efenfp40.json"  background="transparent"  speed="1" loop  autoplay></lottie-player>
+      </div>
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
-  <Note />
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    highlight="Features"
-    title="What you get with AstroWind"
-    subtitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae."
-    items={[
-      [
-        {
-          title: 'Astro + Tailwind CSS Integration',
-          description:
-            'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-          icon: 'tabler:brand-tailwind',
-        },
-        {
-          title: 'Ready-to-use Components',
-          description:
-            'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-          icon: 'tabler:components',
-        },
-        {
-          title: 'Best Practices',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:list-check',
-        },
-      ],
-      [
-        {
-          title: 'Excellent Page Speed',
-          description:
-            'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-          icon: 'tabler:rocket',
-        },
-        {
-          title: 'Search Engine Optimization (SEO)',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:arrows-right-left',
-        },
-        {
-          title: 'Open to new ideas and contributions',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:bulb',
-        },
-      ],
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
   <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
+    highlight='What is'
+    title="FrameFixer?"
     items={[
       {
-        title: 'Per ei quaeque sensibus',
+        title: 'Simple to Use',
         description:
-          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+          'The only thing you need to do is drop your photos in, confirm the selected subjects/events are the same, and let FrameFixer do the rest.',
       },
       {
-        title: 'Cu imperdiet posidonium sed',
+        title: 'AI Empowered',
         description:
-          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+          'FrameFixer uses AI to identify which photos are of the same event, and then uses that information to correct the timestamps.',
+        icon: 'ph:sparkle'
       },
+
       {
-        title: 'Nulla omittam sadipscing mel ne',
+        title: 'Saves Time',
         description:
-          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+          'By eliminating the need to manually correct timestamps, FrameFixer saves you time and allows you to focus on what matters most: your photography.',
+        icon: 'ph:fast-forward-circle'
       },
     ]}
     image={{
-      src: import('~/assets/images/caos.jpg'),
+      src: import('~/assets/images/camera.jpg'),
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
-    </Fragment>
+      <h3 id="info" class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The best way to fix timestamps on photos from multiple cameras and photographers</h3>
+      <p>Professional photographers often find themselves hiring multiple shooters to help photograph an event, but sometimes forget to sync the date and time on all the different cameras.</p> 
+       <br/> 
+        <p> This leads to a headache when it comes time to editing photos and getting the whole collection in chronological order, and FrameFixer is here to solve that for you.</p>      
+<br/>
+      <p> This leads to a headache when it comes time to editing photos and getting the whole collection in chronological order, and FrameFixer is here to solve that for you.</p>    
+</Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
-  />
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula.',
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/creativity.jpg'),
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    highlight="Components"
-    items={[
-      {
-        title: 'Headers',
-        description:
-          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Display your product in action and how the Features actually create a solution for your target customer.',
-        icon: 'flat-color-icons:todo-list',
-      },
-      {
-        title: 'Content',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'icon-park:page-template',
-      },
-    ]}
-  />
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <LatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
-    highlight="FAQs"
-    items={[
-      [
-        {
-          question: 'What do I need to start?',
-          answer:
-            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-        },
-        {
-          question: 'How to install the Astro + Tailwind CSS template?',
-          answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
-        },
-        {
-          question: "What's something that you don't understand?",
-          answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-        },
-      ],
-      [
-        {
-          question: "What's an example of when you changed your mind?",
-          answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-        },
-        {
-          question: 'What is something that you would like to try again?',
-          answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-        },
-        {
-          question: 'If you could only ask one question to each person you meet, what would that question be?',
-          answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-        },
-      ],
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    items={[
-      { name: 'Downloads', value: '132K' },
-      { name: 'Stars', value: '24.8K' },
-      { name: 'Forks', value: '10.3K' },
-      { name: 'Users', value: '48.4K' },
-    ]}
-  />
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
-    }}
-  >
-    <Fragment slot="title">
-      Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+  <CallToAction>
+    <Fragment highlight="signup" slot="title">
+      Subscribe to stay up to date!
+    </Fragment>
+    <Fragment slot="subtitle">
+      FrameFixer is currently under development, so sign up for our email newsletter to stay updated for it's released!
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      <div id="mc_embed_shell">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+      <div id="mc_embed_signup">
+      <form action=`https://dev.us21.list-manage.com/subscribe/post?u=44315754403b366841b7a36dc&amp;id=176fca89f7&amp;f_id=0098fee1f0` method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+          <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+          <div id="mce-responses" class="clear foot">
+              <div class="response text-red-400" id="mce-error-response" style="display: none;"></div>
+              <div class="text-blue-400 font-bold !important" id="mce-success-response" style="display: none;"></div>
+          </div>
+      <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+          <input type="text" name="b_44315754403b366841b7a36dc_176fca89f7" tabindex="-1" value="">
+      </div>
+          <div class="flex justify-center w-full">
+            <input type="submit" name="subscribe" class="btn btn-primary border-none rounded-full cursor-pointer m-0 !important" value="Subscribe">
+          </div>
+      </div>
+      </form>
+      </div>
+      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=EMAIL;ftypes[0]=merge;,fnames[1]=FNAME;ftypes[1]=merge;,fnames[2]=LNAME;ftypes[2]=merge;,fnames[3]=ADDRESS;ftypes[3]=merge;,fnames[4]=PHONE;ftypes[4]=merge;,fnames[5]=BIRTHDAY;ftypes[5]=merge;false}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
     </Fragment>
   </CallToAction>
 </Layout>
