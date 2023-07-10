@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'Contact',
-      href: 'mailto:hello@stevedylan.dev',
+      href: 'mailto:hello@framefixer.co',
     },
   ],
   actions: [{ type: 'button', text: 'Subscribe', href: getPermalink('/#mc_embed_shell') }],
@@ -52,7 +52,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'About', href: '/company' },
-        { text: 'Contact', href: 'mailto:hello@stevedylan.dev' },
+        { text: 'Contact', href: 'mailto:hello@framefixer.co' },
         // { text: 'Careers', href: '#' },
         // { text: 'Press', href: '#' },
         // { text: 'Inclusion', href: '#' },

@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'FrameFixer',
 
-  origin: 'https://framefixer.vercel.app',
+  origin: 'https://framefixer.co',
   basePathname: '/',
   trailingSlash: false,
 
