@@ -5,6 +5,7 @@ import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
+import FormEmbed from '~/components/widgets/FormEmbed.astro';
 
 import { headerData } from '~/data';
 import { getPermalink } from '~/utils/permalinks';
@@ -93,29 +94,9 @@ const meta = {
     <Fragment slot="subtitle">
       FrameFixer is currently under development, so sign up for our email newsletter to stay updated for the release!
     </Fragment>
-
     <Fragment slot="subtitle">
-      <div id="mc_embed_shell">
-        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-      <div id="mc_embed_signup">
-      <form action=`https://dev.us21.list-manage.com/subscribe/post?u=44315754403b366841b7a36dc&amp;id=176fca89f7&amp;f_id=0098fee1f0` method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-          <div id="mc_embed_signup_scroll">
-              <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-          <div id="mce-responses" class="clear foot">
-              <div class="response text-red-400" id="mce-error-response" style="display: none;"></div>
-              <div class="text-blue-400 font-bold !important" id="mce-success-response" style="display: none;"></div>
-          </div>
-      <div aria-hidden="true" style="position: absolute; left: -5000px;">
-          /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-          <input type="text" name="b_44315754403b366841b7a36dc_176fca89f7" tabindex="-1" value="">
-      </div>
-          <div class="flex justify-center w-full">
-            <input type="submit" name="subscribe" class="btn btn-primary border-none rounded-full cursor-pointer m-0 !important" value="Subscribe">
-          </div>
-      </div>
-      </form>
-      </div>
-      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=EMAIL;ftypes[0]=merge;,fnames[1]=FNAME;ftypes[1]=merge;,fnames[2]=LNAME;ftypes[2]=merge;,fnames[3]=ADDRESS;ftypes[3]=merge;,fnames[4]=PHONE;ftypes[4]=merge;,fnames[5]=BIRTHDAY;ftypes[5]=merge;false}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+      <FormEmbed client:load />
     </Fragment>
+
   </CallToAction>
 </Layout>

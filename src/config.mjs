@@ -8,8 +8,7 @@ const CONFIG = {
   trailingSlash: false,
 
   title: 'FrameFixer',
-  description:
-    'Effortless sync the timestamps on photos from multiple cameras',
+  description: 'Effortless sync the timestamps on photos from multiple cameras',
   defaultImage: defaultImage,
 
   defaultTheme: 'light:only', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
