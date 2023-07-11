@@ -11,7 +11,7 @@ export const headerData = {
       href: 'mailto:hello@framefixer.co',
     },
   ],
-  actions: [{ type: 'button', text: 'Subscribe', href: getPermalink('/#mc_embed_shell') }],
+  actions: [{ type: 'button', text: 'Subscribe', href: getPermalink('/#subscribe') }],
 };
 
 export const footerData = {
