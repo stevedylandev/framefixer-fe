@@ -1,64 +1,64 @@
 {
-  "version": 3,
-  "routes": [
-    {
-      "src": "/\\/company/",
-      "headers": {
-        "Location": "/company"
-      },
-      "status": 308
-    },
-    {
-      "src": "/\\/privacy/",
-      "headers": {
-        "Location": "/privacy"
-      },
-      "status": 308
-    },
-    {
-      "src": "/\\/terms/",
-      "headers": {
-        "Location": "/terms"
-      },
-      "status": 308
-    },
-    {
-      "src": "/\\/404/",
-      "headers": {
-        "Location": "/404"
-      },
-      "status": 308
-    },
-    {
-      "src": "/(?:\\/(.*?))?\\/([^/]+?)(?:\\/(.*?))?/",
-      "headers": {
-        "Location": "/$1/$2/$3"
-      },
-      "status": 308
-    },
-    {
-      "src": "/(?:\\/(.*?))?\\/([^/]+?)(?:\\/(.*?))?/",
-      "headers": {
-        "Location": "/$1/$2/$3"
-      },
-      "status": 308
-    },
-    {
-      "src": "/(?:\\/(.*?))?(?:\\/(.*?))?/",
-      "headers": {
-        "Location": "/$1/$2"
-      },
-      "status": 308
-    },
-    {
-      "src": "/(?:\\/(.*?))?/",
-      "headers": {
-        "Location": "/$1"
-      },
-      "status": 308
-    },
-    {
-      "handle": "filesystem"
-    }
-  ]
+	"version": 3,
+	"routes": [
+		{
+			"src": "/\\/company/",
+			"headers": {
+				"Location": "/company"
+			},
+			"status": 308
+		},
+		{
+			"src": "/\\/privacy/",
+			"headers": {
+				"Location": "/privacy"
+			},
+			"status": 308
+		},
+		{
+			"src": "/\\/terms/",
+			"headers": {
+				"Location": "/terms"
+			},
+			"status": 308
+		},
+		{
+			"src": "/\\/404/",
+			"headers": {
+				"Location": "/404"
+			},
+			"status": 308
+		},
+		{
+			"src": "/(?:\\/(.*?))?\\/([^/]+?)(?:\\/(.*?))?/",
+			"headers": {
+				"Location": "/$1/$2/$3"
+			},
+			"status": 308
+		},
+		{
+			"src": "/(?:\\/(.*?))?\\/([^/]+?)(?:\\/(.*?))?/",
+			"headers": {
+				"Location": "/$1/$2/$3"
+			},
+			"status": 308
+		},
+		{
+			"src": "/(?:\\/(.*?))?(?:\\/(.*?))?/",
+			"headers": {
+				"Location": "/$1/$2"
+			},
+			"status": 308
+		},
+		{
+			"src": "/(?:\\/(.*?))?/",
+			"headers": {
+				"Location": "/$1"
+			},
+			"status": 308
+		},
+		{
+			"handle": "filesystem"
+		}
+	]
 }
